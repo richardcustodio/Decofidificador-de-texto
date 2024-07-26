@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador de Texto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    <!-- Cabeçalho do site com título e subtítulo -->
+    <header>
+        <h1>Decodificador de Texto</h1>
+        <h2 class="subtitle">Transforme suas mensagens: codifique e decodifique com o Decodificador de Texto.</h2>
+    </header>
+    
+    <!-- Área principal de interação com o usuário -->
+    <main>
+        <div class="text-container">
+            <textarea id="inputText" placeholder="Digite o texto aqui..."></textarea> <!-- Área para inserir texto -->
+            <div class="button-container">
+                <button onclick="criptografar()">Criptografar</button> <!-- Botão para criptografar -->
+                <button onclick="descriptografar()">Descriptografar</button> <!-- Botão para descriptografar -->
+                <span id="copyMessage" style="display: none; margin-left: 10px; color: #333;">
+                    Texto copiado para a área de transferência!
+                </span> <!-- Mensagem de confirmação de cópia -->
+            </div>
+        </div>
+        <div class="text-container">
+            <div id="outputMessage">Nenhuma mensagem encontrada</div> <!-- Área para mostrar o texto criptografado -->
+            <button id="copyButton" onclick="copiarTexto()">Copiar</button> <!-- Botão para copiar o texto -->
+        </div>
+    </main>
+    
+    <!-- Rodapé do site -->
+    <footer>
+        <p>Desenvolvido por Richard Custodio Batista Quadra</p> <!-- Informação do desenvolvedor -->
+    </footer>
+    
+    <!-- Inclusão do arquivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+

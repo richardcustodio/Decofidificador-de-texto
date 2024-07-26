@@ -1,0 +1,113 @@
+/* Estilos gerais para o layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header, footer {
+    width: 100%;
+    padding: 10px 0; /* Espaçamento interno */
+    background-color: #2b2d42; /* Cor de fundo do cabeçalho e rodapé */
+    color: white; /* Cor do texto */
+    text-align: center;
+}
+
+header .subtitle {
+    margin: 5px 0 0; /* Espaço entre o título e o subtítulo */
+    font-size: 16px; /* Tamanho do subtítulo */
+    color: #f0f0f0; /* Cor mais clara para o subtítulo */
+}
+
+footer {
+    margin-top: auto; /* Posiciona o rodapé na parte inferior da página */
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    box-sizing: border-box;
+    background-color: #8d99ae; /* Cor de fundo da área principal */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    flex-grow: 1;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Largura das caixas de texto */
+}
+
+#inputText {
+    width: 100%;
+    height: 150px; /* Altura do textarea */
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none; /* Desabilita o redimensionamento */
+    margin-bottom: 20px;
+}
+
+#outputMessage {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Borda ao redor do texto */
+    background-color: #f9f9f9; /* Cor de fundo da área de saída */
+    overflow-y: auto; /* Habilita a rolagem vertical */
+}
+
+/* Estilos para os botões */
+button {
+    width: 150px; /* Largura dos botões */
+    padding: 10px; /* Espaçamento interno */
+    margin: 5px; /* Espaçamento externo */
+    cursor: pointer; /* Estilo do cursor */
+    font-size: 16px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    background-color: #13315c; /* Cor de fundo */
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 20px;
+}
+
+button:hover, #copyButton:hover {
+    background-color: #134074; /* Cor ao passar o mouse */
+}
+
+#copyButton {
+    margin-top: 10px;
+    cursor: pointer;
+    display: none; /* Esconde inicialmente */
+    background-color: #13315c; /* Mesma cor de fundo dos outros botões */
+    color: white; /* Mesma cor de texto dos outros botões */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Padding para melhor aparência */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estilos para a mensagem de cópia */
+#copyMessage {
+    color: #333; /* Cor do texto da mensagem */
+    margin-left: 10px; /* Espaçamento entre o botão e a mensagem */
+    font-size: 14px; /* Tamanho da fonte */
+    display: none; /* Inicialmente escondido */
+}
+
+
