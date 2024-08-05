@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decodificador de Texto</title>
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Inclusão da biblioteca CryptoJS para criptografia AES -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 <body>
@@ -15,13 +17,17 @@
     
     <main>
         <div class="text-container">
+            <!-- Área de texto para entrada do usuário -->
             <textarea id="inputText" placeholder="Digite o texto aqui..."></textarea>
+            <!-- Campo de entrada para a chave de criptografia -->
             <input type="text" id="key" placeholder="Digite uma chave..." />
             <div class="button-container">
+                <!-- Botões para criptografar, descriptografar e copiar o texto -->
                 <button id="encryptButton">Criptografar</button>
                 <button id="decryptButton" style="display: none;">Descriptografar</button>
                 <button id="copyButton" style="display: none;">Copiar</button>
             </div>
+            <!-- Mensagens de erro e confirmação -->
             <span id="encryptErrorMessage" class="error-message"></span>
             <span id="decryptErrorMessage" class="error-message"></span>
             <span id="copyMessage">Texto copiado para a área de transferência!</span>
@@ -32,8 +38,10 @@
         <p>Desenvolvido por Richard Custodio Batista Quadra</p>
     </footer>
     
+    <!-- Link para o arquivo JavaScript -->
     <script src="app.js"></script>
 </body>
 </html>
+
 
 
