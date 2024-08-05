@@ -6,4 +6,4 @@
 - Haverá também um espaço adjacente para apresentar o texto criptografado.
 - Será exibido um botão de cópia para que o usuário possa copiar sua mensagem criptografada.
 ## Também fique atento ao seguinte recado:
-- Durante a digitação da mensagem, evite letras maiúsculas e caracteres especiais.
+- Durante a digitação da mensagem, não serão permitidas letras maiúsculas nem caracteres especiais.
