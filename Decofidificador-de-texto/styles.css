@@ -1,113 +1,137 @@
-/* Estilos gerais para o layout */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Cor de fundo */
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
 }
 
 header, footer {
     width: 100%;
-    padding: 10px 0; /* Espaçamento interno */
-    background-color: #2b2d42; /* Cor de fundo do cabeçalho e rodapé */
-    color: white; /* Cor do texto */
+    padding: 10px 0;
+    background-color: #2b2d42;
+    color: white;
     text-align: center;
 }
 
 header .subtitle {
-    margin: 5px 0 0; /* Espaço entre o título e o subtítulo */
-    font-size: 16px; /* Tamanho do subtítulo */
-    color: #f0f0f0; /* Cor mais clara para o subtítulo */
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #f0f0f0;
 }
 
 footer {
-    margin-top: auto; /* Posiciona o rodapé na parte inferior da página */
+    margin-top: auto;
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
     width: 100%;
-    max-width: 1200px; /* Largura máxima */
-    margin: 0 auto; /* Centraliza o conteúdo */
+    max-width: 1300px; /* Ajuste conforme necessário para telas maiores */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #8d99ae;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
-    background-color: #8d99ae; /* Cor de fundo da área principal */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    flex-grow: 1;
+    flex-grow: 1; /* Permite que o main cresça para ocupar o espaço disponível */
 }
 
 .text-container {
-    display: flex;
-    flex-direction: column;
-    width: 48%; /* Largura das caixas de texto */
-}
-
-#inputText {
     width: 100%;
-    height: 150px; /* Altura do textarea */
-    padding: 10px;
-    box-sizing: border-box;
-    resize: none; /* Desabilita o redimensionamento */
     margin-bottom: 20px;
 }
 
-#outputMessage {
+#inputText, #key {
     width: 100%;
-    height: 150px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc; /* Borda ao redor do texto */
-    background-color: #f9f9f9; /* Cor de fundo da área de saída */
-    overflow-y: auto; /* Habilita a rolagem vertical */
+    border-radius: 5px;
+    /* margin-bottom: 10px; Espaçamento entre campos */
 }
 
-/* Estilos para os botões */
-button {
-    width: 150px; /* Largura dos botões */
-    padding: 10px; /* Espaçamento interno */
-    margin: 5px; /* Espaçamento externo */
-    cursor: pointer; /* Estilo do cursor */
-    font-size: 16px; /* Tamanho da fonte */
-    color: white; /* Cor do texto */
-    background-color: #13315c; /* Cor de fundo */
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza o texto */
+#inputText {
+    height: 40vh;
+    resize: none;
+    margin-bottom: 10px;
 }
 
 .button-container {
     display: flex;
-    justify-content: center; /* Centraliza os botões */
-    margin-top: 20px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-button:hover, #copyButton:hover {
-    background-color: #134074; /* Cor ao passar o mouse */
+button {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    /* cursor: pointer; */
+    font-size: 16px;
+    color: white;
+    background-color: #13315c;
+    border: none;
+    border-radius: 10px;
 }
 
-#copyButton {
-    margin-top: 10px;
-    cursor: pointer;
-    display: none; /* Esconde inicialmente */
-    background-color: #13315c; /* Mesma cor de fundo dos outros botões */
-    color: white; /* Mesma cor de texto dos outros botões */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 10px; /* Padding para melhor aparência */
-    font-size: 16px; /* Tamanho da fonte */
+button:hover {
+    background-color: #134074;
 }
 
-/* Estilos para a mensagem de cópia */
 #copyMessage {
-    color: #333; /* Cor do texto da mensagem */
-    margin-left: 10px; /* Espaçamento entre o botão e a mensagem */
-    font-size: 14px; /* Tamanho da fonte */
-    display: none; /* Inicialmente escondido */
+    color: #333;
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 18px;
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Ajustes para telas médias (tablets) */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    #inputText {
+        height: 30vh; /* Ajusta a altura do input */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Ajustes para telas pequenas (smartphones) */
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    #inputText {
+        height: 25vh; /* Ajusta a altura do input */
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    header .subtitle {
+        font-size: 14px;
+    }
 }
 
 
