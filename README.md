@@ -8,4 +8,4 @@
 ## Também fique atento ao seguinte recado:
 - Durante a digitação da mensagem, evite letras maiúsculas e caracteres especiais.
 
-Obs: a função de descriptografia não está funcionando no momento, aguarde até que o problema sejá resolvindo.
+Obs: A função de descriptografia não está funcionando no momento, aguarde até que o problema sejá resolvindo.
