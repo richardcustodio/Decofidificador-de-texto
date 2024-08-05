@@ -6,8 +6,6 @@
     <title>Decodificador de Texto</title>
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Inclusão da biblioteca CryptoJS para criptografia AES -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +18,7 @@
             <!-- Área de texto para entrada do usuário -->
             <textarea id="inputText" placeholder="Digite o texto aqui..."></textarea>
             <!-- Campo de entrada para a chave de criptografia -->
-            <input type="text" id="key" placeholder="Digite uma chave..." />
+            <input type="number" id="key" placeholder="Digite uma chave (0-25)..." min="0" max="25" />
             <div class="button-container">
                 <!-- Botões para criptografar, descriptografar e copiar o texto -->
                 <button id="encryptButton">Criptografar</button>
@@ -42,6 +40,7 @@
     <script src="app.js"></script>
 </body>
 </html>
+
 
 
 
