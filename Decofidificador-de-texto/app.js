@@ -10,23 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const decryptErrorMessage = document.getElementById('decryptErrorMessage'); // Mensagem de erro de descriptografia
     let encryptedText = ''; // Variável para armazenar o texto criptografado
 
-    // Função para criptografar o texto usando AES
+    // Função para criptografar o texto usando a Cifra de César
     function criptografar() {
         const text = textarea.value;
-        const key = keyInput.value;
+        const key = parseInt(keyInput.value);
 
         // Resetando mensagens de erro
         encryptErrorMessage.style.display = 'none';
 
         // Verifica se o texto ou a chave estão vazios
-        if (text.trim() === '' || key.trim() === '') {
+        if (text.trim() === '' || isNaN(key)) {
             encryptErrorMessage.textContent = 'Digite um texto e uma chave para criptografar.';
             encryptErrorMessage.style.display = 'inline';
             return;
         }
 
         // Criptografa o texto e exibe no textarea
-        encryptedText = aesEncrypt(text, key);
+        encryptedText = caesarEncrypt(text, key);
         textarea.value = encryptedText;
         textarea.setAttribute('readonly', true);
         keyInput.value = '';
@@ -37,22 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
         copyButton.style.display = 'inline-block';
     }
 
-    // Função para descriptografar o texto usando AES
+    // Função para descriptografar o texto usando a Cifra de César
     function descriptografar() {
-        const key = keyInput.value;
+        const key = parseInt(keyInput.value);
 
         // Resetando mensagens de erro
         decryptErrorMessage.style.display = 'none';
 
         // Verifica se o texto criptografado ou a chave estão vazios
-        if (encryptedText.trim() === '' || key.trim() === '') {
+        if (encryptedText.trim() === '' || isNaN(key)) {
             decryptErrorMessage.textContent = 'Digite uma chave para descriptografar.';
             decryptErrorMessage.style.display = 'inline';
             return;
         }
 
         // Descriptografa o texto e exibe no textarea
-        const decryptedText = aesDecrypt(encryptedText, key);
+        const decryptedText = caesarDecrypt(encryptedText, key);
         textarea.value = decryptedText;
         textarea.removeAttribute('readonly');
 
@@ -75,33 +75,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Função para criptografar o texto usando AES
-    function aesEncrypt(text, key) {
-        const encrypted = CryptoJS.AES.encrypt(text, key).toString();
-        return encrypted;
+    // Função para criptografar o texto usando a Cifra de César
+    function caesarEncrypt(text, key) {
+        return text.replace(/[a-z]/g, function (c) {
+            return String.fromCharCode((c.charCodeAt(0) - 97 + key) % 26 + 97);
+        });
     }
 
-    // Função para descriptografar o texto usando AES
-    function aesDecrypt(encryptedText, key) {
-        const decrypted = CryptoJS.AES.decrypt(encryptedText, key);
-        return decrypted.toString(CryptoJS.enc.Utf8);
+    // Função para descriptografar o texto usando a Cifra de César
+    function caesarDecrypt(text, key) {
+        return text.replace(/[a-z]/g, function (c) {
+            return String.fromCharCode((c.charCodeAt(0) - 97 - key + 26) % 26 + 97);
+        });
     }
 
-    // Função para filtrar o texto de entrada, permitindo apenas letras maiúsculas e espaços
-    function filterInput(event) {
-        const input = event.target.value;
-        const filtered = input.replace(/[^A-Z\s]/g, ''); // Apenas letras maiúsculas e espaços
-        if (input !== filtered) {
-            event.target.value = filtered;
-        }
-    }
-
-    // Adiciona o evento de input ao textarea para aplicar o filtro enquanto o usuário digita
-    textarea.addEventListener('input', filterInput);
-
-    // Adiciona eventos de clique aos botões
+    // Adiciona eventos aos botões
     encryptButton.addEventListener('click', criptografar);
     decryptButton.addEventListener('click', descriptografar);
     copyButton.addEventListener('click', copiarTexto);
+
+    // Restringe a entrada de texto para letras minúsculas e espaços
+    textarea.addEventListener('input', function () {
+        textarea.value = textarea.value.toLowerCase().replace(/[^a-z\s]/g, '');
+    });
 });
 
