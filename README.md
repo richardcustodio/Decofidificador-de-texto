@@ -5,5 +5,7 @@
 - O usuário terá uma caixa de texto e dois botões para criptografar e descriptografar.
 - Haverá também um espaço adjacente para apresentar o texto criptografado.
 - Será exibido um botão de cópia para que o usuário possa copiar sua mensagem criptografada.
+## Também fique atento ao seguinte recado:
+- Durante a digitação da mensagem, evite letras maiúsculas e caracteres especiais.
 
-- Obs: Durante a digitação da mensagem, evite letras maiúsculas e caracteres especiais.
+Obs: a função de descriptografia não está funcionando no momento, aguarde até que o problema sejá resolvindo.
