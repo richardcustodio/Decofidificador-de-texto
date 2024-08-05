@@ -5,5 +5,6 @@
 - O usuário terá uma caixa de texto e dois botões para criptografar e descriptografar.
 - Haverá também um espaço adjacente para apresentar o texto criptografado.
 - Será exibido um botão de cópia para que o usuário possa copiar sua mensagem criptografada.
-## Também fique atento ao seguinte recado:
+## Fique atento aos seguintes recados:
 - Durante a digitação da mensagem, não serão permitidas letras maiúsculas nem caracteres especiais.
+- O projeto utilizará a Cifra de César para codificar e decodificar mensagens.
