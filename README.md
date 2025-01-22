@@ -55,6 +55,6 @@ This project is licensed under the MIT License. Feel free to use and modify it.
 ---
 
 ## 👤 **Autor / Author**
-- [Seu Nome](https://github.com/seu-usuario)  
+- [Seu Nome](https://github.com/richardcustodio)  
   Desenvolvedor entusiasta, apaixonado por tecnologia e aprendizado contínuo.  
   Enthusiastic developer, passionate about technology and continuous learning.
