@@ -28,7 +28,7 @@ A project to encode and decode text. Users can type, encrypt, copy the text, and
 1. Clone este repositório:  
    Clone this repository:  
    ```bash
-   git clone https://github.com/seu-usuario/descodificador-texto.git
+   git clone https://github.com/richardcustodio/descodificador-texto.git
    ```
 
 2. Abra o arquivo `index.html` em seu navegador:  
